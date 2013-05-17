@@ -9,8 +9,8 @@
 
 int main()
 {
-    if (NSAppKitVersionNumber < NSAppKitVersionNumber10_6) {
-        NSLog(@"Mac OS X Snow Leopard (version 10.6) or later required");
+    if (NSAppKitVersionNumber < NSAppKitVersionNumber10_7) {
+        NSLog(@"OS X Lion (version 10.7) or later required");
         exit(EXIT_FAILURE);
     }
     @autoreleasepool {

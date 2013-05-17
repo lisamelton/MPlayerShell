@@ -73,7 +73,7 @@ As long as MPlayerShell is the frontmost application, all the standard MPlayer k
 
 ## Requirements
 
-Mac OS X Snow Leopard (version 10.6) or later is required to run MPlayerShell.
+OS X Lion (version 10.7) or later is required to run MPlayerShell.
 
 Obviously, MPlayerShell also requires [`mplayer`](http://mplayerhq.hu/) or [`mplayer2`](http://www.mplayer2.org/). But not all versions are compatible with MPlayerShell. Custom builds embedded within MPlayerX.app and mplayer2.app should be avoided. I recommend installation via [Homebrew](http://brew.sh/).
 
