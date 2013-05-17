@@ -48,7 +48,7 @@ And it's manual page at:
 
 You can then then copy those files to wherever your want.
 
-Or, you can install them into `/usr/local/bin` and `/usr/share/man/man1/` like this:
+Or, you can install them into `/usr/local/bin` and `/usr/share/man/man1` like this:
 
     xcodebuild install
 
