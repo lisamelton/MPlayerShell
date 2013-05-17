@@ -1,0 +1,10 @@
+//
+//  MPlayerShell-Prefix.pch
+//  MPlayerShell
+//
+//  Copyright (c) 2013 Don Melton
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
