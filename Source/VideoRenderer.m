@@ -25,7 +25,6 @@
     unsigned char *_sharedBuffer;
     unsigned char *_privateBuffer;
     CVPixelBufferRef _pixelBuffer;
-    NSSize _displaySize;
 }
 
 - (id)initWithDelegate:(id <VideoRendererDelegate>)aDelegate
@@ -148,12 +147,14 @@
         NSLog(@"Can't allocate pixel buffer");
         exit(EXIT_FAILURE);
     }
+    NSSize displaySize;
+
     // Use the same egregious algorithm as `mplayer` to derive an "aspect"
     // integer from the actual width and height, and then compare it to their
     // bogus display `aspect` value. If they're the same, then it's extremely
     // likely the image doesn't need to be transformed.
     if (((width * 100) / height) == aspect) {
-        _displaySize = NSMakeSize(
+        displaySize = NSMakeSize(
             width,
             height
         );
@@ -176,19 +177,19 @@
             aspectRatio = aspect / 100.0;
         }
         if (width <= (height * aspectRatio)) {
-            _displaySize = NSMakeSize(
+            displaySize = NSMakeSize(
                 height * aspectRatio,
                 height
             );
         } else {
-            _displaySize = NSMakeSize(
+            displaySize = NSMakeSize(
                 width,
                 width / aspectRatio
             );
         }
     }
     dispatch_async(dispatch_get_main_queue(), ^{
-        [_delegate startRenderingWithDisplaySize:_displaySize];
+        [_delegate startRenderingWithDisplaySize:displaySize];
     });
 
     return 0;
