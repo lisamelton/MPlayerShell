@@ -22,7 +22,7 @@ MPlayerShell also adds explicit menu commands for full-screen and float-on-top m
 
 However, full-screen mode in MPlayerShell doesn't use the animated transition behavior introduced in OS X Lion. It's "instant on" and similar to the mode built into MPlayer itself.
 
-When MPlayerShell launches MPlayer, it's configured to use a larger cache and leverage multiple processor cores for more threads. This significantly improves performance for Blu-ray Disc-sized video. But even this sensible extra configuration can always be overridden at the command line.
+When MPlayerShell launches MPlayer, it's configured to use a larger cache and leverage multiple processor cores for more threads. This significantly improves performance for Blu-ray Disc-sized video. But even this extra configuration can always be overridden at the command line.
 
 MPlayerShell is not particularly innovative. It's a small, derivative work meant to scratch my own OCD-driven itch. My hope in publishing MPlayerShell is that 1) it's useful to someone else and 2) both MPlayer development teams incorporate what I've done here into their projects and make mine completely obsolete and unnecessary.
 
