@@ -252,7 +252,7 @@ static NSString * const kAppName = @"MPlayerShell";
 #pragma mark -
 #pragma mark NSApplicationDelegate
 
-- (void)applicationWillTerminate:(NSNotification *)notification;
+- (void)applicationWillTerminate:(NSNotification *)notification
 {
     // If this application was quit intentionally then send `mplayer` the same
     // command and wait for it to complete. There is the risk that `mplayer`
