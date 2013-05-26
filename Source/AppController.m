@@ -203,6 +203,10 @@ static NSString * const kAppName = @"MPlayerShell";
     // for more threads. This significantly improves `mplayer` performance for
     // Blu-ray Disc-sized video.
     // 
+    // With the larger cache size, another argument is passed to set a minimun
+    // fill percentage to improve performance for network streams by ensuring
+    // playback starts sooner.
+    // 
     // Custom arguments are passed first allowing override of the new cache
     // size and thread count. It's not possible to override slave mode or the
     // video output driver.
@@ -213,13 +217,11 @@ static NSString * const kAppName = @"MPlayerShell";
     [_mplayerTask setLaunchPath:_launchPath];
     [_mplayerTask setArguments:[@[
         @"-slave",
-        @"-vo",
-        [NSString stringWithFormat:@"%@:buffer_name=%@", _videoOutputDriver, _sharedBufferName],
-        @"-cache",
-        @"8192",
-        @"-lavdopts",
-        [NSString stringWithFormat:@"threads=%lu", [[NSProcessInfo processInfo] processorCount]]]
-    arrayByAddingObjectsFromArray:_arguments]];
+        @"-vo", [NSString stringWithFormat:@"%@:buffer_name=%@", _videoOutputDriver, _sharedBufferName],
+        @"-cache",  @"8192",
+        @"-cache-min", @"1",
+        @"-lavdopts", [NSString stringWithFormat:@"threads=%lu", [[NSProcessInfo processInfo] processorCount]]
+    ] arrayByAddingObjectsFromArray:_arguments]];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didTerminateTask)
