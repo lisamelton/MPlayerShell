@@ -127,8 +127,8 @@
         pixelFormat = k24RGBPixelFormat;
         break;
     case 4:
-        // Could be `k32BGRAPixelFormat` too, but we can only guess one.
-        pixelFormat = k32ARGBPixelFormat;
+        // Could be `k32ARGBPixelFormat` too, but we can only guess one.
+        pixelFormat = k32BGRAPixelFormat;
         break;
     default:
         pixelFormat = kYUVSPixelFormat;
