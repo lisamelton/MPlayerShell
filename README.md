@@ -30,8 +30,20 @@ I also wrote MPlayerShell to relearn Objective-C and Cocoa programming. It's bee
 
 ## Installation
 
-Until someone provides a [Homebrew](http://brew.sh/) formula or distributes binaries themselves, MPlayerShell must be built from the Open Source project code here.
+### Homebrew
 
+It is as simple as:
+
+    brew install mplayershell
+
+For the bleeding edge you can use:
+
+    brew install mplayershell --HEAD
+
+In case you'd like to use a custom build of `mplayer` or `mplayer2` you have to install them before. You can get more details in "Requirements" section.
+
+
+### Source
 MPlayerShell is written in Objective-C as an [Xcode](http://developer.apple.com/tools/xcode/) project. You can build it from the command line like this:
 
     git clone https://github.com/donmelton/MPlayerShell.git
