@@ -30,7 +30,44 @@ I also wrote MPlayerShell to relearn Objective-C and Cocoa programming. It's bee
 
 ## Installation
 
-Until someone provides a [Homebrew](http://brew.sh/) formula or distributes binaries themselves, MPlayerShell must be built from the Open Source project code here.
+### Via Homebrew
+
+MPlayerShell is available via [Homebrew](http://brew.sh/), a package manager for OS X.
+
+You can install the latest stable version like this:
+
+    brew install mplayershell
+
+Or, you can install the bleeding-edge version this way:
+
+    brew install --HEAD mplayershell
+
+Both provide the MPlayerShell executable, `mps`, and its manual page at the command line.
+
+### Caveats
+
+MPlayerShell needs [`mplayer`](http://mplayerhq.hu/) or [`mplayer2`](http://www.mplayer2.org/) to work properly. The Homebrew installation formula searches the directories in your `PATH` environment variable for executables named `mplayer` and `mplayer2`. If it can't find either, it will install the Homebrew `mplayer` package for you.
+
+So, if you want a custom build of `mplayer` or `mplayer2`, you need to install it before you install MPlayerShell.
+
+But not all versions of `mplayer` or `mplayer2` are compatible with MPlayerShell. Custom builds embedded within MPlayerX.app and mplayer2.app should be avoided. I recommend installation via Homebrew.
+
+The stable version of `mplayer` is available like this:
+
+    brew install mplayer
+
+Or, you can install the bleeding-edge version of `mplayer` this way:
+
+    brew remove ffmpeg
+    brew remove mplayer
+    brew install --HEAD ffmeg
+    brew install --HEAD mplayer
+
+For `mplayer2`, installation instructions via Homebrew are available [here](https://github.com/pigoz/homebrew-mplayer2).
+
+### From the source
+
+MPlayerShell can also be built from the Open Source project code here.
 
 MPlayerShell is written in Objective-C as an [Xcode](http://developer.apple.com/tools/xcode/) project. You can build it from the command line like this:
 
@@ -75,21 +112,6 @@ As long as MPlayerShell is the frontmost application, all the standard MPlayer k
 
 OS X Lion (version 10.7) or later is required to run MPlayerShell.
 
-Obviously, MPlayerShell also requires [`mplayer`](http://mplayerhq.hu/) or [`mplayer2`](http://www.mplayer2.org/). But not all versions are compatible with MPlayerShell. Custom builds embedded within MPlayerX.app and mplayer2.app should be avoided. I recommend installation via [Homebrew](http://brew.sh/).
-
-The stable version of `mplayer` is available like this:
-
-    brew install mplayer
-
-Or, you can install the bleeding-edge version of `mplayer` this way:
-
-    brew remove ffmpeg
-    brew remove mplayer
-    brew install --HEAD ffmeg
-    brew install --HEAD mplayer
-
-For `mplayer2`, installation instructions via Homebrew are available [here](https://github.com/pigoz/homebrew-mplayer2).
-
 ## Acknowledgements
 
 Thanks to Matt Gallagher for his "[Minimalist Cocoa programming](http://www.cocoawithlove.com/2010/09/minimalist-cocoa-programming.html)" blog post which got me thinking about doing this in the first place.
@@ -97,6 +119,8 @@ Thanks to Matt Gallagher for his "[Minimalist Cocoa programming](http://www.coco
 A big "thank you" to the developers of "[MPlayer OSX Extended](http://www.mplayerosx.ch/)" and "[MPlayerX](http://mplayerx.org/)" whose work gave me some key insights on how to handle the various APIs in MPlayer.
 
 Of course, tremendous thanks to the MPlayer and mplayer2 development teams for creating such flexible and powerful software.
+
+Thanks to [Valerii Hiora](http://github.com/vhbit) for providing a Homebrew formula.
 
 Finally, many thanks to former Apple colleague Ricci Adams of [musictheory.net](http://www.musictheory.net/) for taking me to school on modern Objective-C programming. What a stupid I am.
 
