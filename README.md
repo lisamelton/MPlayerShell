@@ -32,18 +32,34 @@ I also wrote MPlayerShell to relearn Objective-C and Cocoa programming. It's bee
 
 ### Homebrew
 
+The easiest way to get MPlayerShell and all requirements is by using [Homebrew](http://brew.sh/)
+
 It is as simple as:
 
     brew install mplayershell
 
-For the bleeding edge you can use:
+or for the bleeding-edge:
 
     brew install mplayershell --HEAD
 
-In case you'd like to use a custom build of `mplayer` or `mplayer2` you have to install them before. You can get more details in "Requirements" section.
+### Advanced
 
+By default, [Homebrew](http://brew.sh/) respects installed [`mplayer`](http://mplayerhq.hu/) or [`mplayer2`](http://www.mplayer2.org/). In case none of the binaries is presented in the directories list specified by `PATH` environment variable the stable version of `mplayer` will be built and installed automagically.
 
-### Source
+So if you need a customization you should do it BEFORE installing MPlayerShell.
+
+For example, if you're interested in the bleeding-edge version of [`mplayer`](http://mplayerhq.hu/) you can install it like this:
+
+    brew remove ffmpeg
+    brew remove mplayer
+    brew install --HEAD ffmpeg
+    brew install --HEAD mplayer
+
+As [`mplayer2`](http://www.mplayer2.org/) is not a part of default  [Homebrew](http://brew.sh/) repository, for using it you have to follow  installation instructions available [here](https://github.com/pigoz/homebrew-mplayer2).
+
+Please note that you should avoid using MPlayerShell with [`mplayer`](http://mplayerhq.hu/) and [`mplayer2`](http://www.mplayer2.org/) binaries embedded into MPlayerX.app and mplayer2.app
+
+### Building from the source
 MPlayerShell is written in Objective-C as an [Xcode](http://developer.apple.com/tools/xcode/) project. You can build it from the command line like this:
 
     git clone https://github.com/donmelton/MPlayerShell.git
@@ -63,6 +79,13 @@ You can then then copy those files to wherever your want.
 Or, you can install them into `/usr/local/bin` and `/usr/share/man/man1` like this:
 
     xcodebuild install
+
+If you're building from source you're responsible for installing [`mplayer`](http://mplayerhq.hu/) or [`mplayer2`](http://www.mplayer2.org/). The easiest way to do it is using [Homebrew](http://brew.sh/)
+like this:
+
+     brew install mplayer
+
+Check "Advanced" section above to get more information about installing the bleeding-edge of [`mplayer`](http://mplayerhq.hu/) or using [`mplayer2`](http://www.mplayer2.org/)
 
 ## Usage
 
@@ -85,22 +108,10 @@ As long as MPlayerShell is the frontmost application, all the standard MPlayer k
 
 ## Requirements
 
-OS X Lion (version 10.7) or later is required to run MPlayerShell.
+OS X Lion (version 10.7) or later.
 
-Obviously, MPlayerShell also requires [`mplayer`](http://mplayerhq.hu/) or [`mplayer2`](http://www.mplayer2.org/). But not all versions are compatible with MPlayerShell. Custom builds embedded within MPlayerX.app and mplayer2.app should be avoided. I recommend installation via [Homebrew](http://brew.sh/).
+[`mplayer`](http://mplayerhq.hu/) or [`mplayer2`](http://www.mplayer2.org/) see "Installation" section above
 
-The stable version of `mplayer` is available like this:
-
-    brew install mplayer
-
-Or, you can install the bleeding-edge version of `mplayer` this way:
-
-    brew remove ffmpeg
-    brew remove mplayer
-    brew install --HEAD ffmeg
-    brew install --HEAD mplayer
-
-For `mplayer2`, installation instructions via Homebrew are available [here](https://github.com/pigoz/homebrew-mplayer2).
 
 ## Acknowledgements
 
@@ -110,7 +121,10 @@ A big "thank you" to the developers of "[MPlayer OSX Extended](http://www.mplaye
 
 Of course, tremendous thanks to the MPlayer and mplayer2 development teams for creating such flexible and powerful software.
 
+Thanks to [Valerii Hiora](http://github.com/vhbit) for providing a Homebrew formula.
+
 Finally, many thanks to former Apple colleague Ricci Adams of [musictheory.net](http://www.musictheory.net/) for taking me to school on modern Objective-C programming. What a stupid I am.
+
 
 ## License
 
