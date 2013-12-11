@@ -295,7 +295,7 @@ static NSString *fullScreenMenuItemTitle(BOOL inMode)
     [NSApp orderFrontStandardAboutPanelWithOptions:@{
         @"ApplicationName" : _appName,
         @"Copyright" : @"Copyright (c) 2013 Don Melton",
-        @"ApplicationVersion" : @"0.9.1",
+        @"ApplicationVersion" : @"0.9.2",
     }];
 }
 
