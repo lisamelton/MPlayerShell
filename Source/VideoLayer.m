@@ -7,6 +7,7 @@
 
 #import <OpenGL/gl.h>
 #import "VideoLayer.h"
+#import <OpenGL/gl.h>
 
 @implementation VideoLayer {
     CVOpenGLTextureCacheRef _textureCache;
