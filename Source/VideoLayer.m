@@ -5,6 +5,7 @@
 //  Copyright (c) 2013 Don Melton
 //
 
+#import <OpenGL/gl.h>
 #import "VideoLayer.h"
 
 @implementation VideoLayer {
