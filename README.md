@@ -60,7 +60,7 @@ Or, you can install the bleeding-edge version of `mplayer` this way:
 
     brew remove ffmpeg
     brew remove mplayer
-    brew install --HEAD ffmeg
+    brew install --HEAD ffmpeg
     brew install --HEAD mplayer
 
 For `mplayer2`, installation instructions via Homebrew are available [here](https://github.com/pigoz/homebrew-mplayer2).
