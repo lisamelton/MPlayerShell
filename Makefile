@@ -1,4 +1,3 @@
-
 SRCDIR := ./Source/
 SRCFILES := main.m AppController.m MediaView.m PresentationController.m VideoLayer.m VideoRenderer.m
 FRAMEWORKS := IOKit OpenGL QuartzCore Cocoa
@@ -19,3 +18,7 @@ $(EXECUTABLE): makedirectories $(OBJS) Makefile
 
 makedirectories:
 	mkdir -p $(OBJDIR)
+
+clean:
+	rm -f -r $(OBJDIR)
+	rm -f $(EXECUTABLE)
