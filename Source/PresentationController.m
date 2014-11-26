@@ -83,6 +83,7 @@ static NSString *fullScreenMenuItemTitle(BOOL inMode)
     );
 
     _mediaView = [[MediaView alloc] initWithFrame:contentRect];
+    [_mediaView setTranslatesAutoresizingMaskIntoConstraints:NO];
 
     _mediaWindow = [[NSWindow alloc] initWithContentRect:contentRect
                                                styleMask:NSTitledWindowMask |
@@ -97,7 +98,22 @@ static NSString *fullScreenMenuItemTitle(BOOL inMode)
         kDisplayMinWidth,
         kDisplayMinHeight
     )];
-    [_mediaWindow setContentView:_mediaView];
+
+    NSView *contentView = [_mediaWindow contentView];
+    [contentView addSubview:_mediaView];
+
+    NSDictionary *views = NSDictionaryOfVariableBindings(_mediaView);
+
+    [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_mediaView]|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:views]];
+
+    [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_mediaView]|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:views]];
+
     [_mediaWindow setTitle: _appName];
 
     [self setupMenus];
