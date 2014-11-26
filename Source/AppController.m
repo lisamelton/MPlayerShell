@@ -150,14 +150,6 @@ static NSString * const kAppName = @"MPlayerShell";
     [NSApplication sharedApplication];
 
     [NSApp setDelegate:self];
-    [NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
-
-    // Because activation policy has just been set to behave like a real
-    // application, that policy must be reset on exit to prevent, among other
-    // things, the menubar created here from remaining on screen.
-    atexit_b(^ {
-        [NSApp setActivationPolicy:NSApplicationActivationPolicyProhibited];
-    });
 
     // The `PresentationController` class exists mostly to prevent this class
     // from being one huge source file. It also puts all user interface and
@@ -169,8 +161,6 @@ static NSString * const kAppName = @"MPlayerShell";
                                                          [_arguments containsObject:@"--fs"]
                                           floatOnTopMode:[_arguments containsObject:@"-ontop"] ||
                                                          [_arguments containsObject:@"--ontop"]];
-
-    [NSApp activateIgnoringOtherApps:YES];
 
     (void)[[VideoRenderer alloc] initWithDelegate:presentationController
                                  sharedBufferName:_sharedBufferName
@@ -253,6 +243,20 @@ static NSString * const kAppName = @"MPlayerShell";
 
 #pragma mark -
 #pragma mark NSApplicationDelegate
+
+- (void)applicationDidFinishLaunching:(NSNotification *)notification
+{
+    [NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
+
+    // Because activation policy has just been set to behave like a real
+    // application, that policy must be reset on exit to prevent, among other
+    // things, the menubar created here from remaining on screen.
+    atexit_b(^ {
+        [NSApp setActivationPolicy:NSApplicationActivationPolicyProhibited];
+    });
+
+    [NSApp activateIgnoringOtherApps:YES];
+}
 
 - (void)applicationWillTerminate:(NSNotification *)notification
 {
