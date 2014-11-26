@@ -2,7 +2,7 @@
 //  AppController.m
 //  MPlayerShell
 //
-//  Copyright (c) 2013 Don Melton
+//  Copyright (c) 2013-2014 Don Melton
 //
 
 #import "AppController.h"
