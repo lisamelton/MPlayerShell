@@ -147,9 +147,7 @@ static NSString * const kAppName = @"MPlayerShell";
 
 - (void)run
 {
-    [NSApplication sharedApplication];
-
-    [NSApp setDelegate:self];
+    [[NSApplication sharedApplication] setDelegate:self];
 
     // The `PresentationController` class exists mostly to prevent this class
     // from being one huge source file. It also puts all user interface and
