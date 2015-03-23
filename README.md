@@ -4,7 +4,7 @@ MPlayerShell is an improved visual experience for MPlayer on OS X.
 
 ## About
 
-Hi, I'm [Don Melton](http://donmelton.com/). I wrote MPlayerShell because I was unhappy with the visual experience built into MPlayer on OS X, specifically playing video via the [`mplayer`](http://mplayerhq.hu/) and [`mplayer2`](http://www.mplayer2.org/) command line utilities.
+Hi, I'm [Don Melton](http://donmelton.com/). I wrote MPlayerShell because I was unhappy with the visual experience built into MPlayer on OS X, specifically playing video via the [`mplayer`](http://mplayerhq.hu/) and `mplayer2` command line utilities.
 
 I love the flexibility and power of MPlayer, but here are some of the problems I was having:
 
@@ -46,7 +46,7 @@ Both provide the MPlayerShell executable, `mps`, and its manual page at the comm
 
 ### Caveats
 
-MPlayerShell needs [`mplayer`](http://mplayerhq.hu/) or [`mplayer2`](http://www.mplayer2.org/) to work properly. The Homebrew installation formula searches the directories in your `PATH` environment variable for executables named `mplayer` and `mplayer2`. If it can't find either, it will install the Homebrew `mplayer` package for you.
+MPlayerShell needs [`mplayer`](http://mplayerhq.hu/) or `mplayer2` to work properly. The Homebrew installation formula searches the directories in your `PATH` environment variable for executables named `mplayer` and `mplayer2`. If it can't find either, it will install the Homebrew `mplayer` package for you.
 
 So, if you want a custom build of `mplayer` or `mplayer2`, you need to install it before you install MPlayerShell.
 
