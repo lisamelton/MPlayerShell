@@ -4,7 +4,7 @@ MPlayerShell is an improved visual experience for MPlayer on OS X.
 
 ## About
 
-Hi, I'm [Don Melton](http://donmelton.com/). I wrote MPlayerShell because I was unhappy with the visual experience built into MPlayer on OS X, specifically playing video via the [`mplayer`](http://mplayerhq.hu/) and `mplayer2` command line utilities.
+Hi, I'm [Lisa Melton](http://lisamelton.net/). I wrote MPlayerShell because I was unhappy with the visual experience built into MPlayer on OS X, specifically playing video via the [`mplayer`](http://mplayerhq.hu/) and `mplayer2` command line utilities.
 
 I love the flexibility and power of MPlayer, but here are some of the problems I was having:
 
@@ -71,7 +71,7 @@ MPlayerShell can also be built from the Open Source project code here.
 
 MPlayerShell is written in Objective-C as an [Xcode](http://developer.apple.com/tools/xcode/) project. You can build it from the command line like this:
 
-    git clone https://github.com/donmelton/MPlayerShell.git
+    git clone https://github.com/lisamelton/MPlayerShell.git
     cd MPlayerShell
     xcodebuild
 
@@ -126,4 +126,4 @@ Finally, many thanks to former Apple colleague Ricci Adams of [musictheory.net](
 
 ## License
 
-MPlayerShell is copyright [Don Melton](http://donmelton.com/) and available under a [MIT license](https://github.com/donmelton/MPlayerShell/blob/master/LICENSE).
+MPlayerShell is copyright [Lisa Melton](http://lisamelton.net/) and available under a [MIT license](https://github.com/lisamelton/MPlayerShell/blob/master/LICENSE).

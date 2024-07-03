@@ -2,7 +2,7 @@
 //  MediaView.h
 //  MPlayerShell
 //
-//  Copyright (c) 2013 Don Melton
+//  Copyright (c) 2013-2024 Lisa Melton
 //
 
 #import <Cocoa/Cocoa.h>

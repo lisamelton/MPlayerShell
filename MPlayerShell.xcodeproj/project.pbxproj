@@ -154,7 +154,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = "Don Melton";
+				ORGANIZATIONNAME = "Lisa Melton";
 			};
 			buildConfigurationList = F65149BF1745F90D004CC2E9 /* Build configuration list for PBXProject "MPlayerShell" */;
 			compatibilityVersion = "Xcode 3.2";

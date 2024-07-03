@@ -2,7 +2,7 @@
 //  PresentationController.m
 //  MPlayerShell
 //
-//  Copyright (c) 2013-2014 Don Melton
+//  Copyright (c) 2013-2024 Lisa Melton
 //
 
 #import <Carbon/Carbon.h>
@@ -310,7 +310,7 @@ static NSString *fullScreenMenuItemTitle(BOOL inMode)
     }
     [NSApp orderFrontStandardAboutPanelWithOptions:@{
         @"ApplicationName" : _appName,
-        @"Copyright" : @"Copyright (c) 2013-2014 Don Melton",
+        @"Copyright" : @"Copyright (c) 2013-2024 Lisa Melton",
         @"ApplicationVersion" : @"0.9.3",
     }];
 }
